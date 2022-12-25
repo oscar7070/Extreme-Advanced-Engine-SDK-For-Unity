@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ad741d0105d23724bb937fa6bfbe6fa9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CookieTexture: {instanceID: 0}
+  - BakeOnStartIcon: {fileID: 2800000, guid: ea3e8c6d3f63096499adfd85625c2d1d, type: 3}
+  - BakedManuallyIcon: {fileID: 2800000, guid: d12b0c561fba9404a8cdff7ba9dac065, type: 3}
+  - Light2DSettings: {fileID: 11400000, guid: 6ad12734a83112548b045d4355781203, type: 2}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: a6d684b0f88bbe349873ba704852d98d, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

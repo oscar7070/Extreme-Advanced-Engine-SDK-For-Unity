@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1040876161940dd4eb8b257a92774c7c, type: 3}
+  m_Name: Light2DSettings
+  m_EditorClassIdentifier: 
+  LightMaterial: {fileID: 2100000, guid: f20428960ffff354999ab35e6f89f136, type: 2}
+  ShadowMaterial: {fileID: 2100000, guid: acad837d8f71ca24ab3db23535516fd4, type: 2}
+  GlobalLightMaterial: {fileID: 2100000, guid: 145de564d036a034f9355a4451a2b4c7, type: 2}
+  FinalImageWithLightMaterial: {fileID: 2100000, guid: 040df0a869eda864d911048c92a3a245,
+    type: 2}
+  FogMaterial: {fileID: 2100000, guid: 4134a29be6b5cf94d89d7480e728bed4, type: 2}
+  BakeOnStartIcon: {fileID: 0}
+  BakedManuallyIcon: {fileID: 0}
+  ExtendedLitShaders: {fileID: 20000000, guid: 029cc1584493d6c49ac27137100f537f, type: 2}
+  LightResolution: 1
+  MaximumDrawenLights: 28
+  NormalMaps: 1
