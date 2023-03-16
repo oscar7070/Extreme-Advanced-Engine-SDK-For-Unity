@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ab3a11e7ecaa8c249a8d4ecaec4c2f43
+guid: 9cc37c7525346f84e8da34a5a2dff52b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,12 +9,12 @@ TextureImporter:
     enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
-    fadeOut: 1
+    fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
-    mipMapFadeDistanceStart: 0
-    mipMapFadeDistanceEnd: 4
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
@@ -34,7 +34,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: 1
+    aniso: 5
     mipBias: 0
     wrapU: 0
     wrapV: 0
@@ -50,8 +50,8 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 0
-  alphaIsTransparency: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

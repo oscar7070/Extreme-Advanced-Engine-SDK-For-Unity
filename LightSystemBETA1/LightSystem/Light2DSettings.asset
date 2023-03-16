@@ -20,7 +20,6 @@ MonoBehaviour:
   FogMaterial: {fileID: 2100000, guid: 4134a29be6b5cf94d89d7480e728bed4, type: 2}
   BakeOnStartIcon: {fileID: 0}
   BakedManuallyIcon: {fileID: 0}
-  ExtendedLitShaders: {fileID: 20000000, guid: 029cc1584493d6c49ac27137100f537f, type: 2}
   LightResolution: 1
   MaximumDrawenLights: 28
   NormalMaps: 1

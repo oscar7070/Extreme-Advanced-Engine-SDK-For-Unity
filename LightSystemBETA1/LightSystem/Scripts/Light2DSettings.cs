@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 [CreateAssetMenu(fileName = "Light2DSettings", menuName = "2D/Light2DSettings")]
 public class Light2DSettings : ScriptableObject
@@ -32,8 +37,6 @@ public class Light2DSettings : ScriptableObject
 
     [SerializeField] private Texture2D BakedManuallyIcon;
     [HideInInspector] public Texture2D BakedManuallyIco => BakedManuallyIcon;
-
-    public ShaderVariantCollection ExtendedLitShaders;
 
     [Header("Options")]
     [SerializeField, Range(0.0001f, 1)] private float LightResolution = .5f;
@@ -95,6 +98,24 @@ public class Light2DSettings : ScriptableObject
     {
         return NormalMaps;
     }
+
+#if UNITY_EDITOR
+    [MenuItem("Assets/Create/Shader/Light system extended shader")]
+    private static void CreateDefaultLSExtShader()
+    {
+        Shader shader = Shader.Find("Lit2D/StandartLit2DShader");
+        Debug.Log(shader);
+
+        if (shader)
+        {
+            AssetDatabase.CreateAsset(shader, AssetDatabase.GUIDToAssetPath(Selection.assetGUIDs[0]));
+        }
+        else
+        {
+            Debug.Log("The default Light system shader not found: LSExLitShader.shader");
+        }
+    }
+#endif
 
     public readonly string Version = "Version 1.0";
 }
