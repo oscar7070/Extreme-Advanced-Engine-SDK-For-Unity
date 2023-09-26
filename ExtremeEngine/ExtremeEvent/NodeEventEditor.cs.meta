@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 53c9eced6025ece4ba3b1d90e72009a7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - Icon: {fileID: 2800000, guid: d34af35d3fa1f6c45bd47a5d515568aa, type: 3}
+  - PropertyIcon: {fileID: 2800000, guid: a258cce1fa175eb45800346efe6e4dfa, type: 3}
+  - ConnectPointInButtonIcon: {fileID: 2800000, guid: b1e9e9fba120e6d4aa1dd880a3bb9df7,
+      type: 3}
+  - ConnectPointOutButtonIcon: {fileID: 2800000, guid: 78dcb19c5af700442a6936ff9310db7c,
+      type: 3}
+  - CloseButtonIcon: {fileID: 2800000, guid: a7352848c951f8b40af0824b66cf423d, type: 3}
+  - FieldIcon: {fileID: 2800000, guid: 0f2c3a268da898f4897d85150d0e0d6b, type: 3}
+  - MethodIcon: {fileID: 2800000, guid: 8b16370fbd7fdfd47a5509ead09fb6da, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

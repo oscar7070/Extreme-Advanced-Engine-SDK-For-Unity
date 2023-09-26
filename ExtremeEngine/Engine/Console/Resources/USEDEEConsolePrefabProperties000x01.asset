@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312edb8ad784e174cafaabd0a2b7b754, type: 3}
+  m_Name: USEDEEConsolePrefabProperties000x01
+  m_EditorClassIdentifier: 
+  MaximumSavedLogLines: 10
+  DebugScreen: {fileID: 2220539247620796653, guid: e9e953809c4cd5440abab0ce595aec62,
+    type: 3}
+  ConsolePermissions: 3
+  EnableGameCrashInEditor: 0
+  EnableGameCrashInDevBuild: 0
+  EnableGameCrashInBuild: 1
+  Commands:
+  - Command: {fileID: 11400000, guid: 3dbc26cc919073a4d8f619f03bf10460, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: e11c348c53473ce489ba9540a35a7c6d, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: 2e0a022280d6464419706c7d0fb68099, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: cf4acf42aa3b15a439f7286c17814a8e, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: 6860147e6335f7c4d81cd3ee3fa61668, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: cb948cabbc18aac45b948f0d3afa62a3, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: 803ffc82dafca114da9352a8cf728eec, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: 5368ed4d34e873c47b6c255d9218577e, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: 4bb64369c8c48ae42be19f80c8e275e9, type: 2}
+    Permissions: 3
+  - Command: {fileID: 11400000, guid: b9cff190bc573e7479b7e29fc6d194e0, type: 2}
+    Permissions: 2
+  - Command: {fileID: 11400000, guid: ca2a57da0f7cead42a971ec9f0bbc4ad, type: 2}
+    Permissions: 2
+  - Command: {fileID: 11400000, guid: c606c59c68d98064794a97e45a18c477, type: 2}
+    Permissions: 2
+  - Command: {fileID: 11400000, guid: eb4995350e2ce66449bff2ac5c091198, type: 2}
+    Permissions: 2

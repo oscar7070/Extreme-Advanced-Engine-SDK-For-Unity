@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1040876161940dd4eb8b257a92774c7c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LightMaterial: {fileID: 2100000, guid: f20428960ffff354999ab35e6f89f136, type: 2}
+  - ShadowMaterial: {instanceID: 0}
+  - GlobalLightMaterial: {fileID: 2100000, guid: 145de564d036a034f9355a4451a2b4c7,
+      type: 2}
+  - FinalImageWithLightMaterial: {fileID: 2100000, guid: 040df0a869eda864d911048c92a3a245,
+      type: 2}
+  - FogMaterial: {instanceID: 0}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 96d609579d78e474886681c94f41afc6, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

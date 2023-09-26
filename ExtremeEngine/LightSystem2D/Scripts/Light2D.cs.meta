@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ad741d0105d23724bb937fa6bfbe6fa9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CookieTexture: {instanceID: 0}
+  - FinalImageWithLightMaterial: {fileID: 2100000, guid: 040df0a869eda864d911048c92a3a245,
+      type: 2}
+  - Light2DSettings: {fileID: 11400000, guid: 6ad12734a83112548b045d4355781203, type: 2}
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: a6d684b0f88bbe349873ba704852d98d, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

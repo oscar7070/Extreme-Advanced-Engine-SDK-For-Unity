@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkyMaterial
+  m_Shader: {fileID: 4800000, guid: 5e6f46fe887635e4aba57b10a1e3aab9, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsDetailTex:
+        m_Texture: {fileID: 2800000, guid: 894df4036f1adaa4399b7bc277f98833, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudsNoiseTex:
+        m_Texture: {fileID: 2800000, guid: ab3a11e7ecaa8c249a8d4ecaec4c2f43, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonAppearanceTex:
+        m_Texture: {fileID: 2800000, guid: 6ef7e14c7c40ac04195e1d32ef7b5df7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonTex:
+        m_Texture: {fileID: 2800000, guid: d8f0769588e00f744b4340c8f961b4b9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyColor:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyStarsTex:
+        m_Texture: {fileID: 2800000, guid: 59ec345937f606c4f8be611afbc2d787, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkyVerticalGradient:
+        m_Texture: {fileID: 2800000, guid: 4b3896c3dc97f4b4b8920d1eaa4410cb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SunTex:
+        m_Texture: {fileID: 2800000, guid: ea6391dc23c82f7429fcfb65820292cc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _CloudsCoverage: 0.2
+    - _CloudsDetailScale: 7
+    - _CloudsDistance: 5
+    - _CloudsFar: 1
+    - _CloudsHight: 2
+    - _CloudsIntensity: 1
+    - _CloudsNoiseScale: 0.25
+    - _CloudsSoftness: 0.645
+    - _CloudsSpeed: 0.5
+    - _CloudsZoom: 0.07
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _MoonAppearance: 0.25
+    - _MoonAppearanceRotation: 192
+    - _MoonItensity: 1.5
+    - _MoonSize: 0.1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Rotation: 0
+    - _SkyRotation: 0
+    - _SkyRotationX: 270
+    - _SkyRotationY: 100
+    - _SkyVerticalGradientDistance: 0.2
+    - _SkyVerticalPosition: 0.55
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SunItensity: 2.5
+    - _SunSize: 0.1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Clouds: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudsColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudsDarknessColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _CloudsDirection: {r: 1, g: -0.75, b: 0, a: 0}
+    - _CloudsIntensity: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MoonAppearancePosition: {r: 0, g: 1, b: 0, a: 0}
+    - _MoonAppearanceScale: {r: 0, g: 0, b: 0, a: 0}
+    - _MoonColorAppearanceSide: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
+    - _MoonColorDarkSide: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _MoonPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyColor: {r: 0.73800004, g: 0.90393335, b: 1, a: 1}
+    - _SkyDownColor: {r: 0.019444449, g: 0.016666666, b: 0.05, a: 1}
+    - _SkyRotation: {r: 0, g: 0, b: 0, a: 0}
+    - _SkyStarsColor: {r: 1.7814789, g: 1.7814789, b: 1.7814789, a: 1}
+    - _SkyUpColor: {r: 0.70980394, g: 0.9803921, b: 1, a: 1}
+    - _Speed: {r: 1, g: 1, b: 0, a: 0}
+    - _SunPosition: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
