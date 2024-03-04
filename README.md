@@ -19,12 +19,3 @@ Cloth2D
 
 Extreme Engine has many systems like "LightSystem2D" and "ExtremeEvent" and any system have his .Word or .PDF documentation file for help.
 (You have a .docs documentation and a .PDF no difference between them).
-
-known issues:
-{
-   LightSystem: All lights can disappear in the editor and the game itself. //The bug is inside the Unity engine renderer Unity need to fix it not me.(Working on old versions before ~01.01.2023)
-}
-Fixed issues:
-{
-
-}
