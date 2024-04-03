@@ -2,22 +2,11 @@
 
 Version 1.0 RC2 for public use(This build can contains bugs!).
 
-Safty components(not very bugy and with pre release quality):
-{
-Engine Console
-LightSystem2D
-Lit2D Shaders
-}
+Safty components(not very bugy and with pre release quality): Engine Console, LightSystem2D, Lit2D Shaders
 
-Preview components(very bugy dont use on devoloment right now):
-{
-Cloth2D
-}
+Preview components(very bugy dont use on devoloment right now): Cloth2D
 
-Not Working components(very bugy dont use on devoloment right now):
-{
-ExtremeEvent
-}
+Not Working components: ExtremeEvent
 
 You need to install InputSystem & TextMeshPro becouse SDK depends on it.
 
@@ -26,7 +15,7 @@ For Light2D you need to add Light2DRenderer to the camera to render the lights!
 Please Use Lit2D material on your objects with Light 2D colliders!
 ![Screenshot_346](https://github.com/oscar7070/Extreme-Advanced-Engine-SDK-For-Unity/assets/56559647/6a511f63-ee52-49da-90c7-12837423bf1d)
 
-To open the Console Press F1:
+To open the Console press F1:
 ![Screenshot_348](https://github.com/oscar7070/Extreme-Advanced-Engine-SDK-For-Unity/assets/56559647/a8141c28-5af3-4d71-9251-8e1e2654234c)
 
 The Console and Light2D have settings files:
