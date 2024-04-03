@@ -1,22 +1,24 @@
 [EXTREME ADVANCED ENGINE PLUGIN/SDK]
 
-Version 1.0 RC1 for iternal use(dont recomended to build games and release it on this BETA build this build is very bugy and many things may be diffrend in the realese).
+Version 1.0 RC2 for public use(This build can contains bugs!).
 
 Safty components(not very bugy and with pre release quality):
 {
-Engine
 Engine Console
 LightSystem2D
-Shaders
+Lit2D Shaders
 }
 
-Not safty components(very bugy dont use on devoloment right now):
+Preview components(very bugy dont use on devoloment right now):
 {
-ExtremeEvent
 Cloth2D
 }
 
-Extreme Engine has many things like "LightSystem2D" and "ExtremeEvent" and any system have his .Word or .PDF documentation file for help.
-(You have a .docs documentation and a .PDF no difference between them).
+Not Working components(very bugy dont use on devoloment right now):
+{
+ExtremeEvent
+}
 
 You need to install InputSystem & TextMeshPro becouse SDK depends on it.
+
+For Light2D you need to add Light2DRenderer to the camera to render the lights!
