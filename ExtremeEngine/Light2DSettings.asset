@@ -17,7 +17,8 @@ MonoBehaviour:
   GlobalLightMaterial: {fileID: 2100000, guid: 145de564d036a034f9355a4451a2b4c7, type: 2}
   FinalImageWithLightMaterial: {fileID: 2100000, guid: 040df0a869eda864d911048c92a3a245,
     type: 2}
+  NormalsMaterial: {fileID: 2100000, guid: 9aad93bf5c639c04098e634182d66919, type: 2}
   FogMaterial: {fileID: 2100000, guid: 4134a29be6b5cf94d89d7480e728bed4, type: 2}
   LightResolution: 1
-  MaximumDrawenLights: 28
+  MaximumDrawenLights: 32
   NormalMaps: 1

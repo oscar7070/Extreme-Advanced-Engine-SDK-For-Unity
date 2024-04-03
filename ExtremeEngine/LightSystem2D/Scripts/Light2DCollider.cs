@@ -13,7 +13,7 @@ public class Light2DCollider : MonoBehaviour
     public Vector2[] Points = new Vector2[0];
     private Vector2[] PointsInWorldSpace = new Vector2[0];
     private Mesh SpriteMesh;
-    private SpriteRenderer SpriteRenderer;
+    public SpriteRenderer SpriteRenderer { get; private set; }
     private int CachedSpriteID;
     private bool NeedToUpdatePointsInWorldSpace = false;
     public bool SelfShadows = false;
@@ -35,43 +35,17 @@ public class Light2DCollider : MonoBehaviour
     #region Initialize
     private void OnEnable()
     {
-        Light2DSceneData sceneData = FindObjectOfType<Light2DSceneData>();
-        if (sceneData)
-        {
-            sceneData.AddCollider(this);
-        }
+        Light2DSceneData.AddCollider(this);
     }
 
     private void OnDisable()
     {
-        Light2DSceneData sceneData = FindObjectOfType<Light2DSceneData>();
-        if (sceneData)
-        {
-            sceneData.RemoveCollider(this);
-        }
+        Light2DSceneData.RemoveCollider(this);
     }
 
     private void OnDestroy()
     {
-        Light2DSceneData sceneData = FindObjectOfType<Light2DSceneData>();
-        if (sceneData)
-        {
-            sceneData.RemoveCollider(this);
-        }
-    }
-
-    private Light2DSceneData TryCreateOrFind()
-    {
-        Light2DSceneData sceneData = FindObjectOfType<Light2DSceneData>();
-        if (sceneData != null)
-        {
-            return sceneData;
-        }
-        else
-        {
-            GameObject newSystemData = new("Light2D scene data");
-            return newSystemData.AddComponent<Light2DSceneData>();
-        }
+        Light2DSceneData.RemoveCollider(this);
     }
     #endregion
 
@@ -132,7 +106,7 @@ public class Light2DCollider : MonoBehaviour
                 materialPropertyBlock.SetTexture("_MainTex", SpriteRenderer.sprite.texture);
             }
             materialPropertyBlock.SetColor("_Color", SpriteRenderer.color);
-            return new SpriteParameters(SpriteMesh, SetMissingMaterialIfNull(new(Shader.Find("ExtremeEngine/MissingSpriteShader"))), materialPropertyBlock, matrix);
+            return new SpriteParameters(SpriteMesh, SetMissingMaterialIfNull(new(SpriteRenderer.sharedMaterial)), materialPropertyBlock, matrix);
         }
         else
         {
@@ -159,7 +133,7 @@ public class Light2DCollider : MonoBehaviour
                 materialPropertyBlock.SetTexture("_MainTex", SpriteRenderer.sprite.texture);
             }
             materialPropertyBlock.SetColor("_Color", SpriteRenderer.color);
-            return new SpriteParameters(SpriteMesh, SetMissingMaterialIfNull(new(Shader.Find("ExtremeEngine/MissingSpriteShader"))), materialPropertyBlock, matrix);
+            return new SpriteParameters(SpriteMesh, SetMissingMaterialIfNull(new(SpriteRenderer.sharedMaterial)), materialPropertyBlock, matrix);
         }
         else
         {

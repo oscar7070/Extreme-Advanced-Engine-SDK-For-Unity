@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -111,6 +112,13 @@ public class Light2DCameraRenderer : MonoBehaviour
         DrawSprites(slefColliders);
         DestroyTextureToPreventMemoryLeak(selfSilhouetteTempRT);
 
+        RenderTexture normalsTempRT = RenderTexture.GetTemporary(renderTextureDescriptor);
+
+        Buffer.SetRenderTarget(normalsTempRT);
+        Buffer.ClearRenderTarget(false, true, Color.clear);
+        DrawNormals(colliders);
+        DestroyTextureToPreventMemoryLeak(normalsTempRT);
+
         WaitenToDrawLightTextures[] lightTextures = new WaitenToDrawLightTextures[ToRenderList.Count];
 
         Material lightMaterial = Light2DSettings.LightMat;
@@ -127,6 +135,7 @@ public class Light2DCameraRenderer : MonoBehaviour
 
         //Shader.SetGlobalBuffer("_LSLightsBuffer", new ComputeBuffer(0,0));
         Shader.SetGlobalVector("_LSLightPos", (Vector2)Camera.WorldToScreenPoint(ToRenderList[0].Matrix.GetPosition()));
+        Shader.SetGlobalTexture("_LightsTexture_ST", lightTextures[0].Light);
         Shader.SetGlobalFloat("_LSLightSize", ToRenderList[0].Light.Size);
         Shader.SetGlobalMatrix("_LSLightsMatrix", ToRenderList[0].Matrix);
         Shader.SetGlobalTexture("_LSLightsTex", lightTextures[0].Light);
@@ -144,6 +153,7 @@ public class Light2DCameraRenderer : MonoBehaviour
             ToRenderList[i].FinalImageMaterial.SetTexture("_ShadowTex", lightTextures[i].Shadow);
             ToRenderList[i].FinalImageMaterial.SetTexture("_NotSelf", silhouetteTempRT);
             ToRenderList[i].FinalImageMaterial.SetTexture("_Self", selfSilhouetteTempRT);
+            ToRenderList[i].FinalImageMaterial.SetTexture("_Normals", normalsTempRT);
             ToRenderList[i].FinalImageMaterial.SetVector("_Position", ((Vector2)Camera.WorldToScreenPoint(ToRenderList[i].Matrix.GetPosition()) / ScrSize) - half);
             BlitLight(new(ToRenderList[i].FinalImageMaterial, 1));
             for (int ir = 0; ir < ToRenderList[i].ShadowRenderInfo.Count; ir++)
@@ -199,6 +209,26 @@ public class Light2DCameraRenderer : MonoBehaviour
             if (spriteParameters.Mesh)
             {
                 Buffer.DrawMesh(spriteParameters.Mesh, spriteParameters.Matrix, spriteParameters.SharedMaterial, 0, -1, spriteParameters.MaterialPropertyBlock);
+            }
+        }
+    }
+
+    private void DrawNormals(List<Light2DCollider> usedColliders)
+    {
+        for (int i = 0; i < usedColliders.Count; i++)
+        {
+            if (usedColliders[i].SpriteRenderer)
+            {
+                Light2DCollider.SpriteParameters spriteParameters = usedColliders[i].TryGetSpriteParamsForShadow();
+                Texture normalTex = usedColliders[i].SpriteRenderer.material.GetTexture("_NormalTex");
+                Material material = new(Light2DSettings.NormalsMat)
+                {
+                    mainTexture = normalTex
+                };
+                if (normalTex)
+                {
+                    Buffer.DrawMesh(spriteParameters.Mesh, spriteParameters.Matrix, material, 0, -1);
+                }
             }
         }
     }

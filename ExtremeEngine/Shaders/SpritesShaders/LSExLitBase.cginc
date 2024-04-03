@@ -16,11 +16,11 @@ uniform int NormalMapsEnabled; //1 is enabled.
 
 static fixed3 ApplyNormals(fixed3 color, float2 vertex, float2 uv, sampler2D normalTex, fixed normalsIntensity)
 {
-    fixed2 direction = vertex - _LSLightPos.xy;
+    fixed2 direction = vertex -_LSLightPos.xy;
     fixed3 normals = UnpackNormal(tex2D(normalTex, uv));
-    fixed3 lNormals = normalize(fixed3(-direction.x, direction.y, 0));
+    fixed3 lNormals = normalize(fixed3(-direction.x, -direction.y, 0));
     fixed normStr = dot(normals, lNormals);
-    fixed ref = max(0, reflect(-lNormals, normals).z);
+    fixed ref = max(.5f, reflect(-lNormals, normals).z);
     return normStr * ref * normalsIntensity * color;
 }
 

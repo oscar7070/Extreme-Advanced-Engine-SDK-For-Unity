@@ -8,6 +8,8 @@ Shader "Custom/MultiplayTextures"
         _ShadowTex ("ShadowTex", 2D) = "white" {}
         _NotSelf ("NotSelf", 2D) = "white" {}
         _Self ("Self", 2D) = "white" {}
+        _Normals ("Normals", 2D) = "white" {}
+        //_Normals ("Normals", 2D) = "white" {}
         _RadialBlurAngle("RadialBlurAngle", float) = 2
         [ShowAsVector2] _Position("Position", vector) = (0, 0, 0, 0)
 
@@ -33,6 +35,8 @@ Shader "Custom/MultiplayTextures"
             uniform sampler2D _ShadowTex; uniform float4 _ShadowTex_ST;
             uniform sampler2D _NotSelf; uniform float4 _NotSelf_ST;
             uniform sampler2D _Self; uniform float4 _Self_ST;
+            uniform sampler2D _Normals; uniform float4 _Normals_ST;
+
             UNITY_INSTANCING_BUFFER_START( Props )
             UNITY_DEFINE_INSTANCED_PROP( float, _RadialBlurAngle)
             UNITY_DEFINE_INSTANCED_PROP( float2, _Position)
@@ -67,6 +71,7 @@ Shader "Custom/MultiplayTextures"
             {
                 float4 mainTex = tex2D(_MainTex,TRANSFORM_TEX(i.uv0, _MainTex));
                 float4 lightTex = tex2D(_LightTex,TRANSFORM_TEX(i.uv0, _LightTex));
+                //float4 normalsTex = tex2D(_LightTex, TRANSFORM_TEX(i.uv0, _LightTex));
                 //float4 _ShadowTex_var = tex2D(_ShadowTex,TRANSFORM_TEX(i.uv0, _ShadowTex));
 
                 //SoftShadowsFilterStart
@@ -75,13 +80,13 @@ Shader "Custom/MultiplayTextures"
                 float2 coord = i.uv0;
 
                 //min iters is 3
-                fixed iters = 3 * _RadialBlurAngle * 2;
-                const fixed angleInRad = (_RadialBlurAngle * .5) * Deg2Rad;
-                float FinalShadowsA = tex2D(_ShadowTex, coord).a / iters;
+                const fixed samples = 32;
+                const fixed angleInRad = _RadialBlurAngle * Deg2Rad;
+                float finalShadows = tex2D(_ShadowTex, coord).a / samples;
                 //Radial
-                for (int f = 1; f < iters; f++)
+                for (int f = 1; f < samples; f++)
                 {
-                        fixed rotationRadians = fastLerp(-angleInRad, angleInRad, (f / iters));
+                        fixed rotationRadians = fastLerp(-angleInRad, angleInRad, (f / samples));
                         fixed s = sin(rotationRadians);
                         fixed c = cos(rotationRadians);
                         fixed2x2 rotationMatrix = fixed2x2(c, -s, s, c);
@@ -91,26 +96,23 @@ Shader "Custom/MultiplayTextures"
                         coord += .5 +_Position;
 
                         //half4 texel = tex2D(_ShadowTex,  mul (coord - _Position, rotationMatrix) + _Position) / iters;
-                        half4 texel = tex2D(_ShadowTex, coord) / iters;
+                        half4 texel = tex2D(_ShadowTex, coord) / samples;
                         coord = i.uv0;
                         
                         //float4 texel = tex2D(_ShadowTex, mul (coord - (0.5+_Position), rotationMatrix ) + (0.5 +_Position)) / iters;
-                        FinalShadowsA += texel.a;
+                        finalShadows += texel.a;
                 }
-                //Gauss
-                /*for (float x = 0; x < finalSampIters; x++)
-                {
-                    for (float y = 0; y < finalSampIters; y++)
-                    {
-
-                    }
-                }*/
-                //SoftShadowsFilterEnd
-
                 float4 notSelfTex = tex2D(_NotSelf,TRANSFORM_TEX(i.uv0, _NotSelf));
                 float4 selfTex = tex2D(_Self,TRANSFORM_TEX(i.uv0, _Self));
-                return fixed4((1.0 - (1.0 - mainTex.rgb) * (1.0 - (lightTex.rgb * (lightTex.a * saturate((1.0 - ((((FinalShadowsA * lightTex.a) * (1.0 - notSelfTex.a)) + selfTex.a) / lightTex.a))))))).rgb, 1);
-            }
+                float4 normalsTex = tex2D(_Normals, TRANSFORM_TEX(i.uv0, _Normals));    
+    fixed2 direction = (1.0 + i.pos / _ScreenParams) - _Position.xy;
+    fixed3 lNormals = normalize(fixed3(direction.x, direction.y, 0));
+    fixed normStr = dot(normalsTex, lNormals);
+    fixed ref = max(.5f, reflect(-lNormals, normalsTex).z);
+    //return normalsTex * lightTex;
+    
+    return fixed4((1.0 - (1.0 - mainTex.rgb) * (1.0 - (lightTex.rgb * (lightTex.a * saturate((1.0 - ((((finalShadows * lightTex.a) * (1.0 - notSelfTex.a)) + selfTex.a) / lightTex.a))))))).rgb, 1);
+}
             ENDHLSL
         }
     }

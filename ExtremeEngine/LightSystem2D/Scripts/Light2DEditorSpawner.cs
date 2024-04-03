@@ -24,11 +24,5 @@ public class Light2DEditorSpawner
     {
         EditorObjSpawn.Invoke(new GameObject("Light2DCollider").AddComponent<Light2DCollider>().gameObject);
     }
-
-    [MenuItem(Path + "Light2DSceneData")]
-    private static void CreateLight2DSceneData(MenuCommand menuCommand)
-    {
-        EditorObjSpawn.Invoke(new GameObject("Light2DSceneData").AddComponent<Light2DSceneData>().gameObject);
-    }
 }
 #endif

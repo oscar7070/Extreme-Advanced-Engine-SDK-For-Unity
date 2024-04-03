@@ -25,6 +25,8 @@ public class Light2DSettings : ScriptableObject
     [SerializeField] private Material FinalImageWithLightMaterial;
     [HideInInspector] public Material FinalImageWithLightMat => FinalImageWithLightMaterial;
 
+    [SerializeField] private Material NormalsMaterial;
+    [HideInInspector] public Material NormalsMat => NormalsMaterial;
 
     [SerializeField] private Material FogMaterial;
     [HideInInspector] public Material FogMat => FogMaterial;

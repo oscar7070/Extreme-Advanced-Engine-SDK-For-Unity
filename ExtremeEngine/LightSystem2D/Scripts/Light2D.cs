@@ -38,7 +38,6 @@ public class Light2D : MonoBehaviour
     private float HalfSize => Size * .5f;
     private float SquareHalfEdgeSize => Size * .70710f;
     private Bounds2D LightBounds = new();
-    private Light2DSceneData LightSceneData;
 
 #if UNITY_EDITOR
     private bool IsDrawn = false;
@@ -67,7 +66,6 @@ public class Light2D : MonoBehaviour
     {
         FinalImageWithLightMaterial = new Material(Light2DSettings.FinalImageWithLightMat.shader);
         FinalImageWithLightMaterial.CopyPropertiesFromMaterial(Light2DSettings.FinalImageWithLightMat);
-        LightSceneData = FindObjectOfType<Light2DSceneData>();
     }
 
 #if UNITY_EDITOR
@@ -248,7 +246,7 @@ public class Light2D : MonoBehaviour
 
     private ColliderMoreData[] FindCollidersInsideBounds()
     {
-        var light2DColliders = LightSceneData?.GetAllColliders();
+        var light2DColliders = Light2DSceneData.GetAllColliders();
         List<ColliderMoreData> ToReturn = new();
         if (light2DColliders != null)
         {
