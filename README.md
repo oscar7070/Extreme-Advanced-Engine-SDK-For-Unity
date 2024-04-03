@@ -18,3 +18,5 @@ Cloth2D
 
 Extreme Engine has many things like "LightSystem2D" and "ExtremeEvent" and any system have his .Word or .PDF documentation file for help.
 (You have a .docs documentation and a .PDF no difference between them).
+
+You need to install InputSystem & TextMeshPro becouse SDK depends on it.
