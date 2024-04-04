@@ -2,7 +2,7 @@
 
 Version 1.0 RC2 for public use(This build can contains bugs!).
 
-Safty components(not very bugy and with pre release quality): Engine Console, LightSystem2D, Lit2D Shaders
+Safty components(not very bugy and with pre release quality): ExtremeConsole, LightSystem2D, Bounds2D, Lit2D Shaders
 
 Preview components(very bugy dont use on devoloment right now): Cloth2D
 
