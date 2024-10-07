@@ -1,5 +1,7 @@
 ## [EXTREME ADVANCED ENGINE PLUGIN/SDK]
 
+**This is my frozen project use on your risk!!!**
+
 **This is a plugin/SDK that provides many features to Unity it's was used in my canceled game because it's was to complicated and huge now i am switching to my own engine for the next game, the engine called [ExtremeEngine](https://github.com/oscar7070/ExtremeEngine).**
 **Why it's called "EXTREME ADVANCED ENGINE" because it's was a huge SDK for my Unity games.**
 **If you will found any issue in this project please open a issue and i will fix it. And if you have questions fill free to ask!**
@@ -12,7 +14,7 @@ Preview components(very bugy dont use on devoloment right now): Cloth2D
 
 Not Working components: ExtremeEvent
 
-You need to install InputSystem & TextMeshPro becouse SDK depends on it.
+You need to install InputSystem & TextMeshPro becouse the SDK depends on it.
 
 For Light2D you need to add Light2DRenderer to the camera to render the lights!
 
